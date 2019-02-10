@@ -21,6 +21,13 @@ syntax on
 set autoread		" automatically refresh the file if it changes and there are no local changes. 
 set tabstop=2		" TODO: comment
 
+" -----------------
+" NerdTree Settings
+" -----------------
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " ---------------
 " Custom Commands
 " ---------------
